@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1>Kamila Meghji</h1>
+    <img src="images/menmom.png" alt="My mom and I watching the sunset." width="130" height="175" />
+
+    <p> Hi everyone! I'm Kamila and I'm from Seattle, Washington. I'm a fifth year business administration major with a data science minor.</a>
+        I'm also on the club tennis team here at Northeastern. Being from the Pacific Northwest I love spending my time skiing and hiking</a>
+        with my family.</p>
+
+    <img src="images/mendad.png" alt="My dad and I hiking with Mia." width="130" height="175" />
+    <p>This is me and my dad hiking with our dog Mia. She's absolutely the cutest!</p>
+
+    <p>In the future I want to include the content below on this website:</p>
+
+    <ul> <!-- changed to list in the tutorial -->
+      <li>Information about my background</li>
+      <li>Places I've traveled to</li>
+      <li>Food I love</li>
+    </ul>
+
+    <p>Check out my favorite coffee shop in the greater Seattle area below! <a href="https://www.thrulinecoffee.com/">Thruline Coffee Co</a>
+    </p>
+
+    <div id="accessForm">
+      <label for="accessCode">Enter the name of the city where I'm from to learn more about it! </label>
+      <input type="password" id="accessCode" name="accessCode">
+      <button type="button" onclick="checkAccessCode()">Submit</button>
+  </div>
+
+  <!-- The Modal -->
+  <div id="placeModal">
+      <div id="placeContainer">
+          <span id="closePlaceButton" onclick="closePlaceModal()">&times;</span>
+          <iframe src="" id="placeIframe" width="80%" height="80%"></iframe>
+      </div>
+  </div>
+
+  <script>
+      const correctAccessCode = "Seattle"; // Replace with your desired access code
+
+      function checkAccessCode() {
+          const enteredCode = document.getElementById('accessCode').value;
+
+          if (enteredCode === correctAccessCode) {
+              openPlaceModal();
+          } else {
+              alert("Incorrect access code. Please try again.");
+          }
+      }
+
+      // JavaScript functions to open and close the modal
+      function openPlaceModal() {
+          window.open("https://www.marketwatch.com/story/12-reasons-to-move-to-the-pacific-northwest-2020-01-22", 'blank');
+          document.getElementById('placeModal').style.display = 'block';
+      }
+
+      function closePlaceModal() {
+          document.getElementById('placeModal').style.display = 'none';
+      }
+  </script>
+
+  </body>
+</html>
