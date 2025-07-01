@@ -100,7 +100,7 @@ This site works in all modern browsers including:
 
 - **GitHub**: [@kameghji](https://github.com/kameghji)
 - **LinkedIn**: [Connect with me](https://linkedin.com/in/kamila-meghji)
-- **Email**: [Contact me](mailto:kamila@example.com)
+- **Email**: [Contact me](mailto:kameghji@gmail.com)
 
 ---
 
