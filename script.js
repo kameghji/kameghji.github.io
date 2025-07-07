@@ -1,3 +1,4 @@
+
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Typewriter effect for main heading
-    function typeWriter(element, text, speed = 100) {
+    function typeWriter(element, text, speed = 100, callback = null) {
         element.innerHTML = '';
         let i = 0;
         
@@ -39,6 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.innerHTML += text.charAt(i);
                 i++;
                 setTimeout(type, speed);
+            } else if (callback) {
+                callback();
             }
         }
         
@@ -47,10 +50,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Start typewriter effect
     const mainHeading = document.getElementById('main-heading');
-    if (mainHeading) {
+    const descriptionParagraph = document.querySelector('.text-xl.md\\:text-2xl.text-gray-600');
+    
+    if (mainHeading && descriptionParagraph) {
         // Wait a moment for the page to load, then start typing
         setTimeout(() => {
-            typeWriter(mainHeading, "Hi, I'm Kamila", 150);
+            typeWriter(mainHeading, 'Hi, I\'m <span class="text-blue-600">Kamila</span>', 150, () => {
+                // After heading is done, type the description
+                setTimeout(() => {
+                    typeWriter(descriptionParagraph, 'A passionate data-driven marketer with a strong foundation in business and analytics, actively learning how to leverage AI tools enhance marketing strategy and product development.', 50);
+                }, 500);
+            });
         }, 500);
     }
     
