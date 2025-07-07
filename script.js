@@ -1,4 +1,3 @@
-
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -29,6 +28,31 @@ document.addEventListener('DOMContentLoaded', function() {
             closeIcon.classList.add('hidden');
         });
     });
+    
+    // Typewriter effect for main heading
+    function typeWriter(element, text, speed = 100) {
+        element.innerHTML = '';
+        let i = 0;
+        
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        
+        type();
+    }
+    
+    // Start typewriter effect
+    const mainHeading = document.getElementById('main-heading');
+    if (mainHeading) {
+        // Wait a moment for the page to load, then start typing
+        setTimeout(() => {
+            typeWriter(mainHeading, "Hi, I'm Kamila", 150);
+        }, 500);
+    }
     
     // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
