@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Start typewriter effect
     const mainHeading = document.getElementById('main-heading');
-    const descriptionParagraph = document.querySelector('.text-xl.md\\:text-2xl.text-gray-600');
+    const descriptionParagraph = document.querySelector('.hero-description');
     
     if (mainHeading && descriptionParagraph) {
         // Wait a moment for the page to load, then start typing
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             typeWriter(mainHeading, 'Hi, I\'m Kamila', 150, () => {
                 // After heading is done, type the description
                 setTimeout(() => {
-                    typeWriter(descriptionParagraph, 'A passionate data-driven marketer with a strong foundation in business and analytics, actively learning how to leverage AI tools enhance marketing strategy and product development.', 50);
+                    typeWriter(descriptionParagraph, 'A passionate data-driven marketer with a strong foundation in business and analytics, actively learning how to leverage AI tools to enhance marketing strategy and product development.', 50);
                 }, 500);
             });
         }, 500);
